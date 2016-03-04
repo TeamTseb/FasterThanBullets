@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<title>
+Faster Than Bullet
+</title>
+<img id="fregatade" width="0" height="0" src="assets/fregatadesprite.png" alt="Fregatade"> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<img id="fregatade" width="0" height="0" src="assets/fregatadesprite.png" alt="Fregatade"> 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+</style>
+</head>
+<body onload="shipInitalization()">
+<section align = "center">
+<script>
+
+var ship;
+
+function shipInitalization {
+	ship = new shipBones(50, 50, "fregatade");
+	spaceStage.start();
+}
+
+var spaceStage = {
+	canvas : document.createElement("canvas"),
+	start : function() {
+		this.canvas.width = 975;
+		this.canvas.height = 600;
+		this.context = this.canvas.getContext("2d");
+		document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+		this.frameNo = 0;
+		this.interval = setInterval(updatespaceStage, 20);
+		window.addEventListener('keydown', function (e)
+			{
+			e.preventDefault();
+			spaceStage.keys[e.keyCode] = (e.type == "keydown");
+		})
+		window.addEventListener('keyup', function (e) {
+			spaceStage.keys[e.keyCode] = (e.type == "keydown");
+		})
+
+	},
+
+	stop : function() {
+		clearInterval(this.interval);
+	},
+	clear : function() {
+		this.context.clearRect(0,0, this.canvas.width, this.canvas.height);
+	}
+
+}
+
+function shipBones(width, height, sprite, type) {
+
+	this.sprite = document.getElementById("fregatade");
+	this.type = type;
+	this.width = width;
+	this.height = height;
+	this.speed = 0;
+	this.angle = 0;
+	this.moveAngle = 0;
+	this.x = x;
+	this.y = y;
+	this.update = function() {
+		ctx = spaceStage.context;
+		ctx.save();
+		ctx.translate(this.x, this.y);
+		ctx.rotate(this.angle);
+		ctx.restore();
+	}
+	this.newPos = function() {
+		//Here's where the Math gets ... math-y?
+		this.angle += this.moveAngle * Math.PI / 180;
+		this.x += this.speed * Math.sin(this.angle);
+		this.y -= this.speed * Math.cos(this.angle); 
+	}
+}
+
+function updateSpaceStage() {
+	spaceStage.clear();
+	ship.moveAngle = 0;
+	ship.speed = 0;
+	if (spaceStage.keys && spaceStage.keys[65]) {ship.moveAngle = -1; }
+	if (spaceStage.keys && spaceStage.keys[68]) {ship.moveAngle = 1; }
+	if (spaceStage.keys && spaceStage.keys[87]) {ship.speed = 1; }
+	if (spaceStage.keys && spaceStage.keys[83]) {ship.speed = -1; }
+	ship.newPos();
+	ship.update();
+}
+
+</script>
+</section>
+</body>
+</html>

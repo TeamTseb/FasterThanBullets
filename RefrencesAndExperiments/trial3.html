@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Faster Than Bullet</title>
+</head>
+<body>
+<section align = "center">
+<img id="fregatade" width="0" height="0" src="FasterThanBullets/assets/fregatadesprite.png" alt="Fregatade"> 
+<div>
+<canvas id="canvas" width="975" height="600"> 
+This text is displayed if your browser does not support HTML5 Canvas.
+</canvas>
+</div>
+
+	<script type="text/javascript">
+
+	var canvas = document.getElementById("canvas");
+	var ctx;
+	var x = 415;
+	var y = 250;
+	var WIDTH = 975;
+	var HEIGHT = 600;
+	var nisos;
+
+	function rect(x,y,w,h) {
+		ctx.beginPath();
+		ctx.rect(x,y,w,h);
+		ctx.closePath();
+		ctx.fill();
+		ctx.stroke();
+	}
+
+	function clear() {
+		ctx.clearRect(0, 0, WIDTH, HEIGHT);
+	}
+
+	function initalizeCanvas() {
+		canvas = document.getElementById("canvas");
+		//Check on ctx later
+		ctx = canvas.getContext("2d");
+		return setInterval(drawCanvas, 20)
+	}
+
+	function drawCanvas() {
+		clear();
+		ctx.fillStyle = "white";
+		ctx.strokeStyle = "black";
+		rect(0,0,WIDTH,HEIGHT);
+	}
+
+	initalizeCanvas();
+	
+	</script>
+
+</section>
+</body>
+</html>

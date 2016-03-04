@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<!--HTML is HyperText Markup Language-->
+<!--CSS makes things look good-->
+<!--JavaScript adds interactivity-->
+
+<html>
+
+	<header>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Stealing Bootstrap stuff -->
+
+		<title>
+			Sample Page
+		</title>
+
+	</header>
+
+	<h1> This is my first header </h1> <br /> <!-- <br /> indicates a break-->
+
+	<div id="FirstDiv" onClick="replaceText()">
+		This is the first explicitly marked division of the page
+	</div>
+
+	<section>
+
+	<div>
+		<canvas id="canvas" width="300" height="200">
+		This text is displayed if your browser does not support HTML5 Canvas.
+		</canvas>
+
+	</div>
+
+	<img src="http://cdn2-b.examiner.com/sites/default/files/styles/image_content_width/hash/5a/68/5a68bce9d868fcf8afd60b8c33e90ae7.jpg?itok=gRxTxmmG" onClick="clickAlert()">
+
+
+
+</html>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Stealing more stuff -->
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!-- Steaking JavaScript stuff -->
+
+<script>
+
+	function clickAlert() {
+		alert("You clicked on the image");
+
+	}
+
+	function replaceText() {
+		//alert("It's doing something");
+		var x = document.getElementById("FirstDiv");
+		x.border = true;
+		x.innerHTML = "You changed this text by clicking on it!";
+	}
+
+		<script type="text/javascript">
+
+		/*
+		   index.html - draws a dot on the screen, credit to:
+		   http://html5.litten.com/moving-shapes-on-the-html5-canvas-with-the-keyboard/
+		   programmer: MHoel, Nov 3, 2014
+		*/
+
+		// Set some global variables
+		var canvas;
+		var ctx;
+		var dx = 5;
+		var dy = 5;
+		var x = 150;
+		var y = 100;
+		var WIDTH = 300;
+		var HEIGHT = 200;
+
+		function circle(x,y,r) {
+			ctx.beginPath();
+			ctx.arc(x, y, r, 0, Math.PI*2, true);
+			ctx.fill();
+		}
+
+		function rect(x,y,w,h) {
+			ctx.beginPath();
+			ctx.rect(x,y,w,h);
+			ctx.closePath();
+			ctx.fill();
+			ctx.stroke();
+		}
+
+		function clear() {
+			ctx.clearRect(0, 0, WIDTH, HEIGHT);
+		}
+
+		// Important starting function
+		function init() {
+			canvas = document.getElementById("canvas");
+			ctx = canvas.getContext("2d");
+			return setInterval(draw, 10); // this is key, tells draw function to fire 10x per second
+		}
+
+		function doKeyDown(evt){
+			switch (evt.keyCode) {
+				case 38:  /* Up arrow was pressed */
+					if (y - dy > 0){
+						y -= dy;
+					}
+					break;
+				case 40:  /* Down arrow was pressed */
+					if (y + dy < HEIGHT){
+						y += dy;
+					}
+					break;
+				case 37:  /* Left arrow was pressed */
+					if (x - dx > 0){
+						x -= dx;
+					}
+					break;
+				case 39:  /* Right arrow was pressed */
+					if (x + dx < WIDTH){
+						x += dx;
+					}
+					break;
+				}
+		}
+
+		function draw() {
+			clear();
+			ctx.fillStyle = "white";
+			ctx.strokeStyle = "black";
+			rect(0,0,WIDTH,HEIGHT);
+			ctx.fillStyle = "purple";
+			circle(x, y, 10);
+		}
+
+		// Main part of program
+		init();
+		window.addEventListener('keydown',doKeyDown,true);
+
+
+	//<button onClick="FillerFunctionName()"> i'm a button </button>
+
+</script>
+</section>
