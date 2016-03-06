@@ -13,7 +13,7 @@ background.onload = function(){
 }
 
 function startGame() {
-	testSquare = new squareFrame(50, 50, "red", 617.5, 312.5);
+	testSquare = new squareFrame(50, 50, "black", 617.5, 312.5);
 	//testShip = new shipFrame(50, 50, "shipSprite");
 	SpaceStage.start();
 }
