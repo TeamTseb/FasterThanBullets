@@ -1,12 +1,9 @@
-//Script that is loaded by the main .html
-//Could be split up more but as of now it works fine
-//And we've all got bigger problems
-
 var shipSprite = document.getElementById("nisosPNG");
 var testSquare;
 
 var background = new Image();
 background.src = document.getElementById("S1background");
+
 
 background.onload = function(){
 	ctx.drawImage(background,0,0);
