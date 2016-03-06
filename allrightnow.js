@@ -1,11 +1,11 @@
 //Script that is loaded by the main .html
-//Could be split up omre but as of now it works fine
+//Could be split up more but as of now it works fine
 //And we've all got bigger problems
 
-var background = new Image();
 var shipSprite = document.getElementById("nisosPNG");
 var testSquare;
 
+var background = new Image();
 background.src = document.getElementById("S1background");
 
 background.onload = function(){
