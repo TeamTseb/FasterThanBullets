@@ -1,11 +1,19 @@
-//D0n't forg3t!
-//<script type="text/javascript">
+//Script that is loaded by the main .html
+//Could be split up omre but as of now it works fine
+//And we've all got bigger problems
 
+var background = new Image();
 var shipSprite = document.getElementById("nisosPNG");
 var testSquare;
 
+background.src = document.getElementById("S1background");
+
+background.onload = function(){
+	ctx.drawImage(background,0,0);
+}
+
 function startGame() {
-	testSquare = new squareFrame(50, 50, "red", 255, 255);
+	testSquare = new squareFrame(50, 50, "red", 617.5, 312.5);
 	//testShip = new shipFrame(50, 50, "shipSprite");
 	SpaceStage.start();
 }
@@ -118,9 +126,9 @@ function updateSpaceStage() {
     
     testSquare.newPos();
     testSquare.update();
+}
 
-    //---------------------------------------------\\
-
+function UpdateSquareStage() {
     //Ship Movement
 
     testShip.moveAngle = 0;
@@ -137,6 +145,7 @@ function updateSpaceStage() {
     
     testShip.newPos();
     testShip.update();
+
 }
 
 
