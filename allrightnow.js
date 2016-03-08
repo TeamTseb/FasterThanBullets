@@ -1,9 +1,10 @@
+
+//Begin code with variable initalization
 var shipSprite = document.getElementById("nisosPNG");
 var testSquare;
 
 var background = new Image();
 background.src = document.getElementById("S1background");
-
 
 background.onload = function(){
 	ctx.drawImage(background,0,0);
@@ -84,6 +85,20 @@ function shipFrame(x, y, image, type) {
 		this.y = y;
 
 	this.update = function() {
+
+		if (this.x > game.canvas.width) {
+				this.x -= game.canvas.width;
+			}
+			if (this.x < 0) {
+				this.x += game.canvas.width;
+			}
+			if (this.y > game.canvas.height) {
+				this.y -= game.canvas.height;
+			}
+			if (this.y < 0) {
+				this.y += game.canvas.height;
+		}
+
 		ctx = SpaceStage.context;
 		ctx.save();
 		ctx.translate(this.x, this.y);
