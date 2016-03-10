@@ -1,6 +1,1 @@
-# FasterThanBullets
-Top-down browser game based on Asteroids.
-
-"Whenever you change something, ensure that it is documented properly."
-
-- Matt Bradley (Scrum Lord)
+This is the trivia branch, where I (Charlie) will manage my stuff.
