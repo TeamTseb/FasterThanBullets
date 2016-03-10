@@ -66,9 +66,35 @@ var SpaceStage = {
 	}
 }
 
+
+// Noooooooooooooooooooooooooooooooooooooooooo
+function component(width, height, color, x, y, type) {
+	this.type = type;
+	    if (type == "image") {
+        this.image = new Image();
+        this.image.src = color;
+    }
+    this.width = width;
+    this.height = height;
+    this.x = x;
+    this.y = y;
+        this.update = function() {
+        ctx = SpaceStage.context;
+        if (type == "image") {
+            ctx.drawImage(this.image, 
+                this.x, 
+                this.y,
+                this.width, this.height);
+        } else {
+            ctx.fillStyle = color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+        }
+    }
+} 
+
 /*
 	Creats a new function called squareFrame with the parameters
-	width, height, color, x (position), y (position) and shapetype (square, circle, oval, dodecahedron)
+	width, height, color, x (position), y (position) and shapetype (square, circle, oval, dodecahedron(NO 3D SHAPES ALLOWED))
 */
 function squareFrame(width, height, color, x, y, square) {
 
@@ -95,10 +121,11 @@ function squareFrame(width, height, color, x, y, square) {
 		ctx.fillStyle = color;
 		// ???
 		ctx.fillRect(this.width / -2, this.height / -2, this.width, this.height);
-		// ??? (Questions and Uncertianty Part 2: Electric Confusaloo)
+		// ??? (Questions and Uncertianty Part 2: Electric Confused-aloo)
 		ctx.restore();
 
 	}
+
 	//Current home of the only functional lines of rotation code
 	this.newPos = function() {
 		
@@ -201,6 +228,7 @@ function updateSpaceStage() {
     	the testSquare by running the update function
     */
     testSquare.update();
+    drawBackground();
 }
 
 /*
@@ -225,7 +253,6 @@ function UpdateSquareStage() {
     
     testShip.newPos();
     testShip.update();
-
 }
 
 // ASCII Art, because why not?
