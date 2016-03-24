@@ -1,7 +1,15 @@
-// DEATHPONG! 
-// IT'S LIKE LETHAL LEAGUE BUT IT'S WORSE
+//     ____  _________  ________  ______  ____  _   ________
+//    / __ \/ ____/   |/_  __/ / / / __ \/ __ \/ | / / ____/
+//   / / / / __/ / /| | / / / /_/ / /_/ / / / /  |/ / / __  
+//  / /_/ / /___/ ___ |/ / / __  / ____/ /_/ / /|  / /_/ /  
+// /_____/_____/_/  |_/_/ /_/ /_/_/    \____/_/ |_/\____/  
 
-//When refreing to the construction of 
+//---------------------------------------------------------------------------------------------------
+//	When refreing to the construction of this game (Specifically the paddle and colision detection) |
+//	I've been basing it on almost completly on Atari Breakout. But this game takes place mainly on  |
+//	The Y axis, not the X axis. So, you tell me, do we just need to swap all meantions of width and |
+//	height? If you figure that out let me know. It'd sure solve alot of my worries.					|
+//---------------------------------------------------------------------------------------------------
 
 var canvas = document.getElementById("gamecanvas");
 var ctx = canvas.getContext("2d");
