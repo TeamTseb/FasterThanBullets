@@ -11,6 +11,8 @@
 //	height? If you figure that out let me know. It'd sure solve alot of my worries.					|
 //---------------------------------------------------------------------------------------------------
 
+//Edit made on 1:31:24 2016/3/29
+
 
 Deathpong {
 
@@ -187,7 +189,11 @@ Deathpong {
 			var press1 = Deathpong.IMAGES["IMAGES/press1.png"];
 			var press2 = Deathpong.IMAGES["IMAGES/press2.png"];
 			var winner = Deathpong.IMAGES["IMAGES/winner.png"];
-		}
+			this.press1  = { image: press1, x: 10, y: pong.cfg.wallWidth };
+      		this.press2  = { image: press2, x: (pong.width - press2.width - 10), y: pong.cfg.wallWidth };
+      		this.winner1 = { image: winner, x: (pong.width/2) - winner.width - pong.cfg.wallWidth, y: 6 * pong.cfg.wallWidth };
+      		this.winner2 = { image: winner, x: (pong.width/2) + pong.cfg.wallWidth, y: 6 * pong.cfg.wallWidth };
+		}, //Stopped at line 192 on other file
 	}
 
 }
