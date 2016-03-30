@@ -1,5 +1,5 @@
 # FasterThanBullets
-### (A two preson pong game based on Lethal League and a few other titles)
+### (A two preson pong game with a few new features)
 
 Group: Matt, Mitch, Charles, John 
 Name: TSEB (Best Backwards) 
