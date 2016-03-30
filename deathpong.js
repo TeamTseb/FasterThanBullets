@@ -191,7 +191,7 @@ Deathpong {
       		this.press2  = { image: press2, x: (pong.width - press2.width - 10), y: pong.cfg.wallWidth };
       		this.winner1 = { image: winner, x: (pong.width/2) - winner.width - pong.cfg.wallWidth, y: 6 * pong.cfg.wallWidth };
       		this.winner2 = { image: winner, x: (pong.width/2) + pong.cfg.wallWidth, y: 6 * pong.cfg.wallWidth };
-		}, //Stopped at line 192 on other file
+		},
 	}
 
 }
