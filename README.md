@@ -1,5 +1,5 @@
 # FasterThanBullets
-### (A two preson pong game with a few new features)
+### A two preson pong game with a few new features
 
 ___
 
