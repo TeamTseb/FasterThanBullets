@@ -1,3 +1,4 @@
+<!-- Figure out how to load this locally so we can make changes -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 <!DOCTYPE html>
@@ -7,20 +8,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Website for Team T-Seb's game; Faster Than Bullets">
+    <meta name="author" content="Team T-Seb Web Development team">
     <link rel="icon" href="images/our_website/favicon.ico">
 
     <title>Team T-Seb</title> <!--This is our homepage -->
 
     <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+	<!--     Loads Stylesheet locally as opposed to loading from
+	../../dist/css/bootstrap.min.css  (Which isn't a real place, by the way)
+	Also, it's not a real Stypesheet -->
+    <link href="bootstrap.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="modified.css"
   </head>
   
   <body>
@@ -36,13 +41,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Faster Than Bullets</a>
+              <a class="navbar-brand" href="https://github.com/TeamTseb/FasterThanBullets/releases">Faster Than Bullets</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About Team T-Seb</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+<!--                 <li class="active"><a href="#">Home</a></li>
+                <li><a href="https://github.com/TeamTseb/FasterThanBullets/wiki/Roles-for-the-Team">About Team T-Seb</a></li>
+                <li><a href="https://github.com/TeamTseb/FasterThanBullets/issues">Contact Us</a></li> -->
               </ul>
             </div>
           </div>
@@ -55,19 +60,19 @@
 
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-square" src="images/our_website/ourrepository.png" alt="Image Error" width="350" height="140">
+          <img class="img-square" src="images/our_website/ourrepository.png" alt="Image Error" width="350" height="150">
           <h2>Our Code Repository</h2>
           <p>Come visit if you want to follow our development process, fork our code, view our commit messages, submit issues, get in-touch and create a deep personal connection with the developers, learn our roles or anything in-between!</p>
           <p><a class="btn btn-default" href="https://github.com/TeamTseb/FasterThanBullets" role="button">Visit our Repository &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-square" src="images/our_website/ourwiki.png" alt="Image Error" width="350" height="140">
+          <img class="img-square" src="images/our_website/ourwiki.png" alt="Image Error" width="350" height="150">
           <h2>Our Wiki</h2>
           <p>Check here to see daily documentation of our development process as well as our original ideas and guiding thoughts for the project. We even have a carefully curated list of all the sources and samples we used to make our game.</p>
           <p><a class="btn btn-default" href="https://github.com/TeamTseb/FasterThanBullets/wiki" role="button">Visit our Wiki &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-square" src="images/our_website/ourissues.png" alt="Image Error" width="350" height="140">
+          <img class="img-square" src="images/our_website/ourissues.png" alt="Image Error" width="350" height="150">
           <h2>Our Issues Page</h2>
           <p>We'll admit we're not prefect and we often make mistakes. However, by playing our game and reporting issues on our Issues page, you can help us catch whatever we've missed during our development process and mabey even suggest new ideas.</p>
           <p><a class="btn btn-default" href="https://github.com/TeamTseb/FasterThanBullets/issues" role="button">Visit our Issues Page &raquo;</a></p>
@@ -81,7 +86,7 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Faster Than Bullets<span class="text-muted"> Our take on Pong</span></h2>
+          <h2 class="featurette-heading" href="https://github.com/TeamTseb/FasterThanBullets/releases">Faster Than Bullets<span class="text-muted"> Our take on Pong</span></h2>
           <p class="lead">Faster Than Bullets is more than a re-imagining of the classic 1972 arcade game. 
           Our game features new mechanics as well as the classic structure and frame of the game.</p>
         </div>
@@ -102,6 +107,11 @@
           <img class="featurette-image img-responsive center-block" src="images/our_website/game2.png" alt="Image Error" width="400" height="300">
         </div>
       </div>
+
+      <!-- Nice little lien that seporates the copyright notice from the second photo -->
+      <hr class="featurette-divider">
+      	<div class="row featurette">
+      	</div>
 
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
