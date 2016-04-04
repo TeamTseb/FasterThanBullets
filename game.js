@@ -160,6 +160,15 @@ Game = {
     return new Date().getTime();
   },
 
+  //38 is up arrow
+  //40 is down arrow
+  //87 is W
+  //83 is S
+  //81 is Q
+  //65 is A
+  //80 is P
+  //76 is L
+
   KEY: {
     BACKSPACE: 8,
     TAB:       9,
@@ -179,6 +188,12 @@ Game = {
     ZERO:     48,
     ONE:      49,
     TWO:      50,
+    W:        87,
+    S:        83,
+    UPARROW:  38,
+    DOWNARROW: 40,
+    O:        79,
+    K:        75,
     A:        65,
     L:        76,
     P:        80,
