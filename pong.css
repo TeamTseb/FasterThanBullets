@@ -5,6 +5,7 @@ body { background-color: black; color: #AAA; font-size: 12pt; padding: 1em; }
 #sidebar                        { width: 18em; height: 40em; float: left; font-size: 0.825em; background-color: #333; border: 1px solid white; padding: 1em;  }
 #sidebar h2                     { color: white; text-align: center; margin: 0; }
 #sidebar h3						{ color: white; text-align: center; margin: 0; }
+/* I learned to make comments in CSS!!! */
 #sidebar .parts                 { padding-left: 1em; list-style-type: none; margin-bottom: 2em; text-align: right; }
 #sidebar .parts li a            { color: white; text-decoration: none; }
 #sidebar .parts li a:visited    { color: white; }

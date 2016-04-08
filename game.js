@@ -1,16 +1,6 @@
-//=============================================================================
-//
-// We need some ECMAScript 5 methods but we need to implement them ourselves
-// for older browsers (compatibility: http://kangax.github.com/es5-compat-table/)
-//
-//  Function.bind:        https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/bind
-//  Object.create:        http://javascript.crockford.com/prototypal.html
-//  Object.extend:        (defacto standard like jquery $.extend or prototype's Object.extend)
-//
-//  Object.construct:     our own wrapper around Object.create that ALSO calls
-//                        an initialize constructor method if one exists
-//
-//=============================================================================
+
+//  ECMA Script 5 required dawg
+
 
 if (!Function.prototype.bind) {
   Function.prototype.bind = function(obj) {

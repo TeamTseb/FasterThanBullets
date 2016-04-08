@@ -1,5 +1,11 @@
 //=============================================================================
-// PONG
+// ______ _____  ___ _____ _   _ ______ _____ _   _ _____ 
+// |  _  \  ___|/ _ \_   _| | | || ___ \  _  | \ | |  __ \
+// | | | | |__ / /_\ \| | | |_| || |_/ / | | |  \| | |  \/
+// | | | |  __||  _  || | |  _  ||  __/| | | | . ` | | __ 
+// | |/ /| |___| | | || | | | | || |   \ \_/ / |\  | |_\ \
+// |___/ \____/\_| |_/\_/ \_| |_/\_|    \___/\_| \_/\____/
+                                                       
 //=============================================================================
 
 Pong = {
@@ -26,12 +32,15 @@ Pong = {
     predictionExact: 'red'
   },
 
+
+  //Loaded in index as wel!
   Images: [
     "images/press1.png",
     "images/press2.png",
     "images/winner.png"
   ],
 
+  //AI still incredibly HARDCORE 
   Levels: [
     {aiReaction: 0.2, aiError:  40}, // 0:  ai is losing by 8
     {aiReaction: 0.3, aiError:  50}, // 1:  ai is losing by 7
@@ -88,6 +97,7 @@ Pong = {
     }
   },
 
+  //Send prompt to browser
   stop: function(ask) {
     if (this.playing) {
       if (!ask || this.runner.confirm('Abandon game in progress ?')) {
@@ -106,6 +116,7 @@ Pong = {
   goal: function(playerNo) {
     this.sounds.goal();
     this.scores[playerNo] += 1;
+    //End the game at 9
     if (this.scores[playerNo] == 9) {
       this.menu.declareWinner(playerNo);
       this.stop();
@@ -148,6 +159,7 @@ Pong = {
       this.menu.draw(ctx);
   },
 
+  //Check key presses
   onkeydown: function(keyCode) {
     switch(keyCode) {
       case Game.KEY.ZERO: this.startDemo();            break;
@@ -161,6 +173,7 @@ Pong = {
     }
   },
 
+  //Check key releases
   onkeyup: function(keyCode) {
     switch(keyCode) {
       case Game.KEY.W: if (!this.leftPaddle.auto)  this.leftPaddle.stopMovingUp();    break;
@@ -182,6 +195,7 @@ Pong = {
   Menu: {
 
     initialize: function(pong) {
+    	//Initalize tutorial prompt images
       var press1 = pong.images["images/press1.png"];
       var press2 = pong.images["images/press2.png"];
       var winner = pong.images["images/winner.png"];
@@ -189,8 +203,9 @@ Pong = {
       this.press2  = { image: press2, x: (pong.width - press2.width - 10),                   y: pong.cfg.wallWidth     };
       this.winner1 = { image: winner, x: (pong.width/2) - winner.width - pong.cfg.wallWidth, y: 6 * pong.cfg.wallWidth };
       this.winner2 = { image: winner, x: (pong.width/2)                + pong.cfg.wallWidth, y: 6 * pong.cfg.wallWidth };
-    }, //It ended here. Take it back!
+    }, //Don't forget you stopped here
 
+    //Declares winner 
     declareWinner: function(playerNo) {
       this.winner = playerNo;
     },
